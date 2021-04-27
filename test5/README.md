@@ -52,7 +52,8 @@ create or replace PACKAGE MyPack IS
   PROCEDURE Get_Employees(V_EMPLOYEE_ID NUMBER);
 END MyPack;
 ```
-![](createPack.png)
+![](images\创建包名为MyPack的包.jpg)
+
 ### 步骤二 创建函数和过程
 ```sql
 create or replace PACKAGE BODY MyPack IS
@@ -83,7 +84,8 @@ create or replace PACKAGE BODY MyPack IS
     END;
 END MyPack;
 ```
-![](createfunc.png)
+![](images\创建函数和过程.jpg)
+
 ### 步骤三 测试
 #### 测试1
 测试函数Get_SaleAmount()
@@ -91,8 +93,8 @@ END MyPack;
 select count(*) from orders;
 select MyPack.Get_SaleAmount(11) AS 部门11应收金额,MyPack.Get_SaleAmount(12) AS 部门12应收金额 from dual;
 ```
-![](test1-1.png)
-![](test1-2.png)
+![](images\创建包名为MyPack的包.jpg)
+
 
 #### 测试2
 测试过程et_Employees()
@@ -107,22 +109,11 @@ BEGIN
   MYPACK.Get_Employees (  V_EMPLOYEE_ID => V_EMPLOYEE_ID) ;    
 END;
 ```
-![](test2.png)
-## 实验注意事项，完成时间： 2021-04-30日前上交
+![](images\创建函数和过程.jpg)
 
-- 请按时完成实验，过时扣分。
-- 查询语句及分析文档`必须提交`到：你的Oracle项目中的test5目录中。
-- 上交后，通过这个地址应该可以打开你的源码：https://github.com/你的用户名/oracle/tree/master/test5
-- 实验分析及结果文档说明书用Markdown格式编写。
 
-## 评分标准
-
-- 实验独立完成，有详细的分析文档，文档中写明自己的用户名。（总分20分）
-- 包与程序编写正确（总分50分）
-- 测试语句正确（总分30分）
-
-## 参见
-
-- 数据库服务器中的样例用户teacher，密码是123
-- [Oracle学习之start with...connect by子句的用法](https://www.cnblogs.com/sunfie/p/5129716.html)
-- 实验5.sql
+## 实验总结
+通过本次实验,我们学习了如何创建包,创建函数,以及函钟条件,分支语句的使用方法,以及常用的PL/SQL函数用法。值得记住的是在PL/SQL中常用的循环语句,通过LOOP语句实现执行指定的语句序列的循环,常用的LOOP循环语句包含3种形式：
+- 基本的LOOP
+- WHILE...LOOP
+- FOR...LOOP
